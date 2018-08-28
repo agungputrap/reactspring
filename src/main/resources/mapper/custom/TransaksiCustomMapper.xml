@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.agung.agungtesting.dao.custom.TransaksiCustomMapper">
+    <resultMap id="TransaksiItemDto" type="com.agung.agungtesting.dto.transaksi.TransaksiItemDto">
+        <result column="id" jdbcType="TIMESTAMP" property="id" />
+        <result column="waktu_transaksi" jdbcType="TIMESTAMP" property="waktuTransaksi" />
+        <result column="id_penerima" jdbcType="INTEGER" property="idCustomerPenerima" />
+        <result column="id_pengirim" jdbcType="INTEGER" property="idPengirim" />
+        <result column="nominal" jdbcType="BIGINT" property="nominal" />
+        <result column="kurs_dari" jdbcType="VARCHAR" property="kursDari" />
+        <result column="kurs_ke" jdbcType="VARCHAR" property="kursKe" />
+        <result column="nama_penerima" jdbcType="VARCHAR" property="namaPenerima" />
+        <result column="status" jdbcType="VARCHAR" property="status" />
+        <result column="kurs_idr" jdbcType="DOUBLE" property="kursIdr" />
+        <result column="kurs" jdbcType="DOUBLE" property="kurs" />
+        <result column="promo_id" jdbcType="INTEGER" property="promoId" />
+        <result column="promo_nama" jdbcType="VARCHAR" property="promoNama" />
+        <result column="promo_kurs" jdbcType="DOUBLE" property="promoKurs" />
+        <result column="promo_nominal" jdbcType="INTEGER" property="promoNominal" />
+        <result column="promo_tipe" jdbcType="VARCHAR" property="promoTipe" />
+    </resultMap>
+
+    <select id="getAllTransactionUser" resultMap="TransaksiItemDto">
+        select t.id, t.waktu_transaksi, t.nominal, t.kurs_dari, t.kurs_ke, c.nama nama_penerima, c.id id_penerima, t.status, t.kurs, t.kurs_idr
+        from transaksi t
+        join customer c on t.id_penerima = c.id
+        where t.id_pengirim = #{idCust}
+        order by t.waktu_transaksi desc
+    </select>
+
+    <select id="getAllTransactionByAdmin" resultMap="TransaksiItemDto">
+        select t.id, t.waktu_transaksi, t.nominal, t.kurs_dari, t.kurs_ke, c.nama nama_penerima, c.id id_penerima, t.status, t.kurs, t.kurs_idr,
+        p.id promo_id, p.nama promo_nama, p.kurs promo_kurs, p.nominal promo_nominal, p.tipe promo_tipe
+        from transaksi t
+        join customer c on t.id_penerima = c.id
+        left join promo p on p.id = t.promo_id
+        order by t.waktu_transaksi desc
+    </select>
+</mapper>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+
+        <!-- mvn -Dmybatis.generator.overwrite=true mybatis-generator:generate -->
+
+    <classPathEntry location="C:\Users\pusilkom\.m2\repository\org\postgresql\postgresql\9.4.1212\postgresql-9.4.1212.jar"/>
+
+    <context id="system">
+        <plugin type="org.mybatis.generator.plugins.SerializablePlugin"/>
+        <plugin type="org.mybatis.generator.plugins.RowBoundsPlugin"/>
+
+        <jdbcConnection driverClass="org.postgresql.Driver"
+                        connectionURL="jdbc:postgresql://localhost:5432/bootreact"
+                        userId="postgres"
+                        password="12345"/>
+
+        <javaModelGenerator targetPackage="com.agung.agungtesting.domain" targetProject="src/main/java">
+            <property name="enableSubPackages" value="true"/>
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+
+        <sqlMapGenerator targetPackage="mapper" targetProject="src/main/resources">
+            <property name="enableSubPackages" value="true"/>
+        </sqlMapGenerator>
+
+        <javaClientGenerator targetPackage="com.agung.agungtesting.dao"
+                             targetProject="src/main/java" type="XMLMAPPER">
+            <property name="enableSubPackages" value="true"/>
+        </javaClientGenerator>
+
+        <table tableName="customer" domainObjectName="Customer"
+            modelType="flat"
+            enableDeleteByExample="true"
+            enableUpdateByExample="true"
+            selectByPrimaryKeyQueryId="false"
+            selectByExampleQueryId="false">
+            <property name="useActualColumnNames" value="false"/>
+            <generatedKey column="id" sqlStatement="JDBC" identity="true"/>
+        </table>
+
+         <table tableName="transaksi" domainObjectName="Transaksi"
+            modelType="flat"
+            enableDeleteByExample="true"
+            enableUpdateByExample="true"
+            selectByPrimaryKeyQueryId="false"
+            selectByExampleQueryId="false">
+            <property name="useActualColumnNames" value="false"/>
+            <generatedKey column="id" sqlStatement="JDBC" identity="true" />
+        </table>
+
+        <table tableName="pengguna" domainObjectName="Pengguna"
+               modelType="flat"
+               enableDeleteByExample="true"
+               enableUpdateByExample="true"
+               selectByPrimaryKeyQueryId="false"
+               selectByExampleQueryId="false">
+            <property name="useActualColumnNames" value="false"/>
+            <generatedKey column="id" sqlStatement="JDBC" identity="true"/>
+        </table>
+
+        <table tableName="peran" domainObjectName="Peran"
+               modelType="flat"
+               enableDeleteByExample="true"
+               enableUpdateByExample="true"
+               selectByPrimaryKeyQueryId="false"
+               selectByExampleQueryId="false">
+            <property name="useActualColumnNames" value="false"/>
+            <generatedKey column="id" sqlStatement="JDBC" identity="true"/>
+        </table>
+
+        <table tableName="pengguna_peran" domainObjectName="PenggunaPeran"
+               modelType="flat"
+               enableDeleteByExample="true"
+               enableUpdateByExample="true"
+               selectByPrimaryKeyQueryId="false"
+               selectByExampleQueryId="false">
+            <property name="useActualColumnNames" value="false"/>
+            <generatedKey column="id" sqlStatement="JDBC" identity="true"/>
+        </table>
+
+        <table tableName="promo" domainObjectName="Promo"
+               modelType="flat"
+               enableDeleteByExample="true"
+               enableUpdateByExample="true"
+               selectByPrimaryKeyQueryId="false"
+               selectByExampleQueryId="false">
+            <property name="useActualColumnNames" value="false"/>
+            <generatedKey column="id" sqlStatement="JDBC" identity="true"/>
+        </table>
+
+    </context>
+</generatorConfiguration>

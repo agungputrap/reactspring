@@ -1,0 +1,168 @@
+body {
+  background-color: #233685;
+  margin: 0;
+  font-family: "Merriweather Sans" sans-serif;
+}
+
+/*.navbar-default {
+    background-color: transparent;
+    border-color: transparent;
+    font-size: 18px;
+    margin:8px;
+}*/
+
+#imgSmall {
+  height: 90px;
+  margin-top: 50px;
+  margin-left: 100px;
+}
+
+#textSmall {
+  margin-left: 120px;
+  font-family: "Roboto", sans-serif;
+  font-size: 15px;
+}
+
+@media only screen and (max-width: 1130px) {
+  #imgSmall {
+    height: 75px;
+  }
+
+  #textSmall {
+    margin-left: 115px;
+    font-size: 13px;
+  }
+}
+
+.form-login {
+  width: 375px;
+  height: 545px;
+  margin: auto;
+  background-color: #1e2b6f;
+  font-family: "Roboto", serif;
+  color: #ffffff;
+  padding-top: 10px;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.form-control {
+  border-radius: 0px;
+}
+
+.input-group {
+  height: 60px;
+  margin: auto;
+  margin-top: 50px;
+  margin-bottom: 30px;
+  width: 320px;
+  font-size: 20px;
+}
+
+.input-group-addon {
+  background-color: #3d54be;
+  color: #ffffff;
+  width: 75px;
+  border: none;
+  border-radius: 0px;
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+}
+
+.btn-promo {
+  background-color: #ffbc49;
+  border-color: transparent;
+  height: 45px;
+  width: 115px;
+  font-size: 16px;
+}
+
+.btn-promo:hover {
+  background-color: #ffa91f;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.btn-primary {
+  background-color: #2db0fe;
+  border-color: transparent;
+  height: 45px;
+  width: 115px;
+  font-size: 16px;
+  /*margin-right: 25px;*/
+  /*margin-left: 85px;*/
+}
+
+.btn-primary:hover {
+  background-color: #0184d3;
+}
+
+.btn {
+  margin: 0 1em;
+}
+
+@media only screen and (max-width: 1000px) {
+  #formPosition {
+    margin-right: 75px;
+    margin-top: -100px;
+  }
+}
+
+@media only screen and (min-width: 1001px) {
+  #formPosition {
+    margin-right: 75px;
+    margin-top: -100px;
+  }
+
+  /* .navbar-default {
+  } */
+}
+
+@media only screen and (min-width: 1450px) {
+  #formPosition {
+    margin-right: 190px;
+    margin-top: -100px;
+  }
+
+  /* .navbar-right {
+    margin-right: 125px;
+  } */
+}
+
+#featuresPosition {
+  margin-top: -150px;
+  margin-left: 25px;
+  color: #ffffff;
+  font-family: "Roboto", serif;
+}
+
+@media only screen and (min-width: 1650px) {
+  #featuresPosition {
+    margin-top: -60px;
+  }
+}
+
+.input-group .group-send {
+  font-size: 20px;
+}
+
+.input-group-addon .group-send {
+  background-color: #3d54be;
+  color: #ffffff;
+  width: 75px;
+  border: none;
+  border-radius: 0px;
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+}
+
+.input-group-btn {
+  background-color: #3d54be;
+  color: #ffffff;
+  width: 75px;
+  border: none;
+  border-radius: 0px;
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+}
